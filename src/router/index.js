@@ -5,6 +5,8 @@ import GuestLayout from '../components/GuestLayout.vue'
 import SearchByName from '../views/SearchByName.vue'
 import SearchByLetter from '../views/SearchByLetter.vue'
 import SearchByIngredient from '../views/SearchByIngredient.vue'
+import MealDetails from '../views/MealDetails.vue'
+
 
 const routes=[
     {
@@ -31,12 +33,18 @@ const routes=[
                 name:'byIngredient',
                 component:SearchByIngredient
             },
+            {
+                path :'/meal/:id',
+                name : 'mealDetails',
+                component : MealDetails
+            },
         ],
     },
     {
         path:'/guest',
         component:GuestLayout,
     },
+    
     
 ]
 
