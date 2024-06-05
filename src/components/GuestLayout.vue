@@ -1,6 +1,6 @@
 <template>
-Login Page
- </template>
+  Login Page
+</template>
 
 <script setup>
 

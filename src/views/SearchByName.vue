@@ -1,4 +1,5 @@
-<template>
+<template> 
+<div>
     <div class="p-8 pb-0">
          <input type="text" 
          v-model="keyword"
@@ -27,6 +28,8 @@
             </div>
         </div>
     </div>
+    </div>
+
 </template>
 
 <script setup>
@@ -36,11 +39,15 @@ import { computed } from '@vue/reactivity'
 import { useRoute } from "vue-router"
 
 const route=useRoute()
-const keyword=ref('')
+const keyword=ref("")
 const meals = computed(()=> store.state.searchedMeals)
 function searchMeals(){
     //axiosClint.get(`search.php?s=${keyword.value}`)// making request and  save the info in the store
-    store.dispatch('searchMeals', keyword.value)
+      if (keyword.value) {
+    store.dispatch("searchMeals", keyword.value);
+  } else {
+    store.commit("setSearchedMeals", []);
+  }
 
 }
 

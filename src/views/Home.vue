@@ -17,7 +17,7 @@ import axiosClint from '../axiosClint.js'
 const meals = computed(()=>store.state.meals) //properiety
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const ingredient = ref([])
-onMounted(async()=>{//or then
+onMounted(async () =>{//or then
   const response = await axiosClint.get('/list.php?i=list')
     console.log(response.data)
     ingredient.value = response.data
